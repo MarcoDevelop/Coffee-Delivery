@@ -1,23 +1,24 @@
-import { ActionsContainer, HeaderContainer, HeaderContent } from './styles'
-import { MapPin, ShoppingCartSimple } from 'phosphor-react'
+import { HeaderButton, HeaderButtonsContainer, HeaderContainer } from './styles'
+import { MapPin, ShoppingCart } from 'phosphor-react'
 
 import logoImg from '../../assets/logo.svg'
 
 export function Header() {
   return (
     <HeaderContainer>
-      <HeaderContent>
+      <div className="container">
         <img src={logoImg} alt="" />
 
-        <ActionsContainer>
-          <span>
-            <MapPin size={32} color="#8047F8" /> Porto Alegre, RS
-          </span>
-          <div>
-            <ShoppingCartSimple size={32} color="#C47F17" />
-          </div>
-        </ActionsContainer>
-      </HeaderContent>
+        <HeaderButtonsContainer>
+          <HeaderButton>
+            <MapPin size={20} weight="fill" color="#8047F8" /> Porto Alegre, RS
+          </HeaderButton>
+
+          <HeaderButton>
+            <ShoppingCart size={20} weight="fill" color="#C47F17" />
+          </HeaderButton>
+        </HeaderButtonsContainer>
+      </div>
     </HeaderContainer>
   )
 }

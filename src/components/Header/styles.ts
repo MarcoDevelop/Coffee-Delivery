@@ -1,51 +1,36 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
-  background: ${(props) => props.theme['gray-100']};
-  padding: 2.5rem 0 2.5rem;
-`
-
-export const HeaderContent = styled.div`
   width: 100%;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-
+  height: 6.5rem;
+  background: ${(props) => props.theme['base-background']};
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 `
 
-export const ActionsContainer = styled.div`
+export const HeaderButtonsContainer = styled.div`
   display: flex;
-  gap: 1rem;
-
-  justify-content: space-between;
   align-items: center;
+  gap: 0.75rem;
+`
 
-  height: 50px;
-  border: 0;
-  color: ${(props) => props.theme.white};
+export const HeaderButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 2.3rem;
+  height: 2.3rem;
+  border: none;
+  padding: 0 0.5rem;
+  position: relative;
 
-  span {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    border-radius: 6px;
-
-    padding: 1rem;
-
-    background: ${(props) => props.theme['purple-light']};
-    color: ${(props) => props.theme['purple-dark']};
-  }
-
-  div {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    border-radius: 6px;
-
-    padding: 1rem;
-    background: ${(props) => props.theme['yellow-light']};
-  }
+  font-size: ${(props) => props.theme['text-regular-s']};
 `

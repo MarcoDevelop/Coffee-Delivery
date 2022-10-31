@@ -1,14 +1,10 @@
 import styled from 'styled-components'
 
 export const LayoutContainer = styled.div`
-  max-width: 74rem;
-  height: calc(100vh - 10rem);
-  margin: 5rem auto;
-  padding: 2.5rem;
-
-  background: ${(props) => props.theme['gray-300']};
-  border-radius: 8px;
-
-  display: flex;
-  flex-direction: column;
+  .container {
+    width: 100%;
+    max-width: 70rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
 `
