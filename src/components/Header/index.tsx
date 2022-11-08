@@ -10,12 +10,12 @@ export function Header() {
         <img src={logoImg} alt="" />
 
         <HeaderButtonsContainer>
-          <HeaderButton>
-            <MapPin size={20} weight="fill" color="#8047F8" /> Porto Alegre, RS
+          <HeaderButton variant="purple">
+            <MapPin size={20} weight="fill" />
+            Porto Alegre, RS
           </HeaderButton>
-
-          <HeaderButton>
-            <ShoppingCart size={20} weight="fill" color="#C47F17" />
+          <HeaderButton variant="yellow">
+            <ShoppingCart size={20} weight="fill" />
           </HeaderButton>
         </HeaderButtonsContainer>
       </div>
