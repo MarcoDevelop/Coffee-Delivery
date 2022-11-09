@@ -10,10 +10,15 @@ interface IconContainerProps {
   iconBg: string
 }
 
-export const IconContainer = styled.div`
+export const IconContainer = styled.div<IconContainerProps>`
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
 
   background-color: ${({ iconBg }) => iconBg};
+  color: ${({ theme }) => theme['base-white']};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
