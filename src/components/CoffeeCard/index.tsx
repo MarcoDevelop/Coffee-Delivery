@@ -1,11 +1,14 @@
 import { RegularText, TitleText } from '../../styles/themes/global'
+import { CounterInput } from '../CounterInput'
 import {
+  AddCartCounter,
   CardFooter,
   CoffeeCardContainer,
   Description,
   Name,
   Tags,
 } from './styles'
+import { ShoppingCart } from 'phosphor-react'
 
 export function CoffeeCard() {
   return (
@@ -32,6 +35,13 @@ export function CoffeeCard() {
             9,90
           </TitleText>
         </div>
+
+        <AddCartCounter>
+          <CounterInput />
+          <button>
+            <ShoppingCart weight="fill" size={22} />
+          </button>
+        </AddCartCounter>
       </CardFooter>
     </CoffeeCardContainer>
   )
