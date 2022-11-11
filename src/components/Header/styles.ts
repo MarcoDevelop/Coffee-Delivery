@@ -2,11 +2,16 @@ import styled, { css } from 'styled-components'
 
 export const HeaderContainer = styled.header`
   height: 6.5rem;
-  background: ${(props) => props.theme['base-background']};
+  background: ${(props) => props.theme['base-card']};
   display: flex;
   align-items: center;
 
   padding: 0 2.5rem;
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5;
 
   > div {
     display: flex;
