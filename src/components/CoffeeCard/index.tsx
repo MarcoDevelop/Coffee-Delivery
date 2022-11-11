@@ -47,7 +47,7 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
         <div>
           <RegularText size="s">R$</RegularText>
           <TitleText size="m" color="text" as="strong">
-            {coffee.price}
+            {formattedPrice}
           </TitleText>
         </div>
 

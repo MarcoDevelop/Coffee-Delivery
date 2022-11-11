@@ -8,8 +8,8 @@ export function CoffeeList() {
     <CoffeeListContainer className="container">
       <TitleText size="l">Nossos cafés</TitleText>
       <CoffeeGrid>
-        {coffees.map((coffees) => (
-          <CoffeeCard key={coffees.id} coffee={coffee} />
+        {coffees.map((coffee) => (
+          <CoffeeCard key={coffee.id} coffee={coffee} />
         ))}
       </CoffeeGrid>
     </CoffeeListContainer>
