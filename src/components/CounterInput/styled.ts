@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const CounterInputContainer = styled.input`
+export interface CounterInputProps {
+  size: 'medium' | 'small'
+}
+
+export const CounterInputContainer = styled.div`
   flex: 1;
   background: ${(props) => props.theme['base-button']};
   display: flex;
@@ -26,4 +30,19 @@ export const CounterInputContainer = styled.input`
 
 export const IconWrapper = styled.button.attrs({
   type: 'button',
-})``
+})`
+  width: 0.875rem;
+  height: 0.875rem;
+  border: none;
+  background: none;
+  color: ${({ theme }) => theme.colors['brand-purple']};
+  transition: 0.4s;
+
+  &:disabled {
+    opacity: 0.4;
+  }
+
+  &:not(:disabled):hover {
+    color: ${({ theme }) => theme.colors['brand-purple-dark']};
+  }
+`

@@ -1,3 +1,4 @@
+import { coffees } from '../../data/coffee'
 import { TitleText } from '../../styles/themes/global'
 import { CoffeeCard } from '../CoffeeCard'
 import { CoffeeGrid, CoffeeListContainer } from './styles'
@@ -7,12 +8,9 @@ export function CoffeeList() {
     <CoffeeListContainer className="container">
       <TitleText size="l">Nossos cafés</TitleText>
       <CoffeeGrid>
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
+        {coffees.map((coffees) => (
+          <CoffeeCard key={coffees.id} coffee={coffee} />
+        ))}
       </CoffeeGrid>
     </CoffeeListContainer>
   )
