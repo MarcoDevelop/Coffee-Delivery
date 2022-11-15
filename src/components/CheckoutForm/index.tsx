@@ -1,9 +1,10 @@
 import { TitleText } from '../../styles/themes/global'
 import { SectionTitle } from '../SectionTitle'
 import { CheckoutFormContainer, FormSectionContainer } from './styles'
-import { MapPinLine } from 'phosphor-react'
+import { MapPinLine, CurrencyDollar } from 'phosphor-react'
 import { useTheme } from 'styled-components'
 import { AddressForm } from './AddressForm'
+import { PaymentOptions } from './PaymentOptions'
 
 export function CheckoutForm() {
   const { colors } = useTheme()
@@ -21,6 +22,16 @@ export function CheckoutForm() {
         />
 
         <AddressForm />
+      </FormSectionContainer>
+
+      <FormSectionContainer>
+        <SectionTitle
+          title="Pagamento"
+          subtitle="O pagamento é feito na entrega. Escolha a forma que deseja pagar"
+          icon={<CurrencyDollar color={colors['brand-purple']} size={22} />}
+        />
+
+        <PaymentOptions />
       </FormSectionContainer>
     </CheckoutFormContainer>
   )
