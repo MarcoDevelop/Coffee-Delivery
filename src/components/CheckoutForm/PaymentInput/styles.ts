@@ -8,6 +8,7 @@ export const PaymentContainer = styled.div`
   align-items: center;
   justify-content: flex-start;
   gap: 0.75rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   border-radius: 6px;
   height: 3rem;
@@ -15,7 +16,7 @@ export const PaymentContainer = styled.div`
   transition: 0.4s;
 
   svg {
-    color: ${(props) => props.theme['base-hover']};
+    color: ${(props) => props.theme['brand-purple']};
   }
 
   &:hover {
