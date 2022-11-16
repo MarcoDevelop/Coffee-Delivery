@@ -47,5 +47,5 @@ export const RemoveButton = styled.button`
   color: ${({ theme }) => theme.colors['base-text']};
   height: 100%;
   border: none;
-  background: ;
+  background: ${({ theme }) => theme.colors['base-button']};
 `
