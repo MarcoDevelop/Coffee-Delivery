@@ -48,4 +48,11 @@ export const RemoveButton = styled.button`
   height: 100%;
   border: none;
   background: ${({ theme }) => theme.colors['base-button']};
+  padding: 0 0.5rem;
+  border-radius: 6px;
+  transition: 0.4s;
+
+  svg {
+    color: ${({ theme }) => theme.colors['brand-purple']};
+  }
 `
