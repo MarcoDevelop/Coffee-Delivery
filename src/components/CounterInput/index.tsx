@@ -1,9 +1,13 @@
 import { Minus, Plus } from 'phosphor-react'
 import { CounterInputContainer, IconWrapper } from './styled'
 
-export function CounterInput() {
+interface CounterInputProps {
+  size?: 'medium' | 'small'
+}
+
+export function CounterInput({ size = 'medium' }: CounterInputProps) {
   return (
-    <CounterInputContainer>
+    <CounterInputContainer size={size}>
       <IconWrapper>
         <Minus size={14} weight="fill" />
       </IconWrapper>

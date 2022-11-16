@@ -1,4 +1,5 @@
 import { TitleText } from '../../styles/themes/global'
+import { CoffeeCart } from '../CoffeeCart'
 import { CoffeeSelectedContainer, DetailsContainer } from './styled'
 
 export function CoffeeSelected() {
@@ -9,7 +10,9 @@ export function CoffeeSelected() {
       </TitleText>
 
       <DetailsContainer>
-        <p>Items</p>
+        <CoffeeCart />
+        <CoffeeCart />
+        <CoffeeCart />
       </DetailsContainer>
     </CoffeeSelectedContainer>
   )

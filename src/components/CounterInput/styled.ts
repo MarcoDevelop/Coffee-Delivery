@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export interface CounterInputProps {
+export interface CounterInputContainerProps {
   size: 'medium' | 'small'
 }
 
-export const CounterInputContainer = styled.div`
+export const CounterInputContainer = styled.div<CounterInputContainerProps>`
   flex: 1;
   background: ${(props) => props.theme['base-button']};
   display: flex;
@@ -12,8 +12,6 @@ export const CounterInputContainer = styled.div`
   justify-content: space-between;
   gap: 4px;
   border-radius: 6px;
-
-  padding: 0.5rem;
 
   input {
     text-align: center;
@@ -26,6 +24,18 @@ export const CounterInputContainer = styled.div`
       outline: none;
     }
   }
+
+  ${({ size }) =>
+    size === 'medium' &&
+    css`
+      padding: 0.5rem;
+    `}
+
+  ${({ size }) =>
+    size === 'small' &&
+    css`
+      padding: 0.3rem 0.5rem;
+    `}
 `
 
 export const IconWrapper = styled.button.attrs({
