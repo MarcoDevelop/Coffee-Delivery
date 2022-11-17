@@ -55,4 +55,8 @@ export const RemoveButton = styled.button`
   svg {
     color: ${({ theme }) => theme.colors['brand-purple']};
   }
+
+  &:hover {
+    background: ${({ theme }) => theme.colors['base-hover']};
+  }
 `

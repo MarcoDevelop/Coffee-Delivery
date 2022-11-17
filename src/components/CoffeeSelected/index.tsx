@@ -1,5 +1,6 @@
 import { TitleText } from '../../styles/themes/global'
 import { CoffeeCart } from '../CoffeeCart'
+import { OrderTotal } from './OrderTotal'
 import { CoffeeSelectedContainer, DetailsContainer } from './styled'
 
 export function CoffeeSelected() {
@@ -12,7 +13,8 @@ export function CoffeeSelected() {
       <DetailsContainer>
         <CoffeeCart />
         <CoffeeCart />
-        <CoffeeCart />
+
+        <OrderTotal />
       </DetailsContainer>
     </CoffeeSelectedContainer>
   )
