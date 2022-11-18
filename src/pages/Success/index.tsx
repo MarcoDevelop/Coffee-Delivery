@@ -35,7 +35,9 @@ export function Success() {
               iconBg={colors['brand-yellow']}
               text={
                 <RegularText>
-                  Previsão de entrega <strong>20 min - 30 min</strong>
+                  Previsão de entrega
+                  <br />
+                  <strong>20 min - 30 min</strong>
                 </RegularText>
               }
             />
@@ -44,7 +46,9 @@ export function Success() {
               iconBg={colors['brand-yellow-dark']}
               text={
                 <RegularText>
-                  Pagamento na entrega <strong>Cartão de Crédito</strong>
+                  Pagamento na entrega
+                  <br />
+                  <strong>Cartão de Crédito</strong>
                 </RegularText>
               }
             />
