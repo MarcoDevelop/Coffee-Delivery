@@ -32,7 +32,11 @@ export function OrderTotal() {
           R$ {formattedCartTotal}
         </RegularText>
       </div>
-      <Button text="confirmar pedido" disabled={cartQuantity <= 0} />
+      <Button
+        text="Confirmar Pedido"
+        disabled={cartQuantity <= 0}
+        type="submit"
+      />
     </OrderTotalContainer>
   )
 }
