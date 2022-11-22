@@ -39,8 +39,24 @@ export function CartContextProvider({ children }: CardContextProviderProps) {
     setCartItems(newCart)
   }
 
-  console.log(cartItems)
+  function changeCartQuantity(
+    cartItemId: number,
+    type: 'increment' | 'decrement',
+  ) {
+    const newCart = produce(cartItems, (draft) => {
+      const coffeeExistsInCart = cartItems.findIndex(
+        (cartItem) => cartItem.id === cartItemId,
+      )
 
+      if (coffeeExistsInCart >= 0) {
+        const item = draft[coffeeExistsInCart]
+        draft[coffeeExistsInCart].quantity =
+          type === 'increment' ? item.quantity + 1 : item.quantity - 1
+      }
+    })
+
+    setCartItems(newCart)
+  }
   return (
     <CardContext.Provider value={{ cartItems, cartQuantity, addCoffeeToCart }}>
       {children}
