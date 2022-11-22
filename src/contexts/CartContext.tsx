@@ -27,7 +27,14 @@ const COFFEE_ITEMS_STORAGE_KEY = 'coffeeDelivery:cartItems'
 export const CardContext = createContext({} as CardContextType)
 
 export function CartContextProvider({ children }: CardContextProviderProps) {
-  const [cartItems, setCartItems] = useState<CartItem[]>([])
+  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+    const storedCartItems = localStorage.getItem(COFFEE_ITEMS_STORAGE_KEY)
+
+    if (storedCartItems) {
+      return JSON.parse(storedCartItems)
+    }
+    return []
+  })
 
   const cartQuantity = cartItems.length
 
@@ -79,9 +86,9 @@ export function CartContextProvider({ children }: CardContextProviderProps) {
       if (coffeeExistsInCart >= 0) {
         draft.splice(coffeeExistsInCart, 1)
       }
-
-      setCartItems(newCart)
     })
+
+    setCartItems(newCart)
   }
 
   useEffect(() => {

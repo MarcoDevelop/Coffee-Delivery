@@ -41,7 +41,7 @@ export function CoffeeCart({ coffee }: CoffeeCartCardProps) {
               onDecrement={handleDecrement}
               quantity={coffee.quantity}
             />
-            <RemoveButton onClick={handleRemove}>
+            <RemoveButton type="button" onClick={handleRemove}>
               <Trash size={16} />
               Remover
             </RemoveButton>
