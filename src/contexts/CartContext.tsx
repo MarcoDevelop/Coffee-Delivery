@@ -10,6 +10,10 @@ interface CardContextType {
   cartItems: CartItem[]
   cartQuantity: number
   addCoffeeToCart: (coffee: CartItem) => void
+  changeCartQuantity: (
+    cartItemId: number,
+    type: 'increment' | 'decrement',
+  ) => void
 }
 
 interface CardContextProviderProps {
@@ -58,7 +62,9 @@ export function CartContextProvider({ children }: CardContextProviderProps) {
     setCartItems(newCart)
   }
   return (
-    <CardContext.Provider value={{ cartItems, cartQuantity, addCoffeeToCart }}>
+    <CardContext.Provider
+      value={{ cartItems, cartQuantity, addCoffeeToCart, changeCartQuantity }}
+    >
       {children}
     </CardContext.Provider>
   )
