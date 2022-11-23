@@ -1,4 +1,5 @@
 import { forwardRef, InputHTMLAttributes } from 'react'
+import { RegularText } from '../../styles/themes/global'
 import { InputStyleContainer, InputWrapper } from './styles'
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
@@ -6,10 +7,11 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ error, ...props }, ref) => {
+  ({ error, className, ...props }, ref) => {
     return (
-      <InputWrapper>
+      <InputWrapper className={className}>
         <InputStyleContainer {...props} ref={ref} />
+        {error && <RegularText size="s">{error}</RegularText>}
       </InputWrapper>
     )
   },
