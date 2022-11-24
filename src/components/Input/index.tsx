@@ -4,13 +4,17 @@ import { InputStyleContainer, InputWrapper } from './styles'
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   error?: string
+  rightText?: string
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ error, className, ...props }, ref) => {
+  ({ error, className, rightText, ...props }, ref) => {
     return (
       <InputWrapper className={className}>
-        <InputStyleContainer {...props} ref={ref} />
+        <InputStyleContainer>
+          <InputStyled {...props} ref={ref} />
+          {rightText && <RightText>{rightText}</RightText>}
+        </InputStyleContainer>
         {error && <RegularText size="s">{error}</RegularText>}
       </InputWrapper>
     )

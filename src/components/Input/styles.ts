@@ -19,14 +19,26 @@ export const InputStyleContainer = styled.input`
   transition: 0.4s;
 
   &:focus {
-    border-color: ${({ theme }) => theme.colors['base-text']};
+    border-color: ${({ theme }) => theme.colors['brand-yellow-dark']};
   }
+`
 
-  color: ${({ theme }) => theme.colors['brand-yellow-dark']};
+export const InputStyled = styled.input`
+  flex: 1;
+  height: 100%;
+  background: none;
   font-size: 0.75rem;
   padding: 0 0.75rem;
+  color: ${({ theme }) => theme.colors['base-text']};
 
   &::placeholder {
     ${({ theme }) => theme.colors['base-label']};
   }
+`
+
+export const RightText = styled.p`
+  font-size: 0.75rem;
+  margin-right: 0.75rem;
+  font-style: italic;
+  color: ${({ theme }) => theme.colors['base-label']};
 `
