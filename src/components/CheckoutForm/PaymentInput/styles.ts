@@ -1,6 +1,13 @@
 import styled from 'styled-components'
 
 export const PaymentContainer = styled.div`
+  input {
+    visibility: hidden;
+    appearance: none;
+  }
+`
+
+export const ContentContainer = styled.div`
   padding: 0 1rem;
   background: ${(props) => props.theme['base-button']};
   color: ${(props) => props.theme['base-text']};
