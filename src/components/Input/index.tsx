@@ -1,6 +1,11 @@
 import { forwardRef, InputHTMLAttributes } from 'react'
 import { RegularText } from '../../styles/themes/global'
-import { InputStyleContainer, InputWrapper } from './styles'
+import {
+  InputStyleContainer,
+  InputStyled,
+  InputWrapper,
+  RightText,
+} from './styles'
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   error?: string

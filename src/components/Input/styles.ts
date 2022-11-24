@@ -11,12 +11,16 @@ export const InputWrapper = styled.div`
   }
 `
 
-export const InputStyleContainer = styled.input`
+export const InputStyleContainer = styled.div`
   height: 2.625rem;
   border-radius: 4px;
   border: 1px solid ${({ theme }) => theme.colors['base-button']};
   background: ${({ theme }) => theme.colors['base-input']};
   transition: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
 
   &:focus {
     border-color: ${({ theme }) => theme.colors['brand-yellow-dark']};
@@ -25,10 +29,12 @@ export const InputStyleContainer = styled.input`
 
 export const InputStyled = styled.input`
   flex: 1;
-  height: 100%;
   background: none;
-  font-size: 0.75rem;
+  border: none;
+  height: 100%;
   padding: 0 0.75rem;
+  height: 100%;
+  font-size: 0.75rem;
   color: ${({ theme }) => theme.colors['base-text']};
 
   &::placeholder {
