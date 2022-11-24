@@ -1,9 +1,15 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const PaymentContainer = styled.div`
   input {
     visibility: hidden;
     appearance: none;
+  }
+
+  input:checked + label div {
+    ${(props) => css`
+      background: ${(props) => props.theme['base-button']};
+    `};
   }
 `
 
