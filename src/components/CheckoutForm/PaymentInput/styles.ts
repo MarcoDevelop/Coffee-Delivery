@@ -8,8 +8,13 @@ export const PaymentContainer = styled.div`
 
   input:checked + label div {
     ${(props) => css`
-      background: ${(props) => props.theme['base-button']};
+      background: ${(props) => props.theme['brand-purple-light']};
+      border-color: ${(props) => props.theme['brand-purple']};
     `};
+
+    &:hover {
+      background: ${(props) => props.theme['brand-purple-light']};
+    }
   }
 `
 
