@@ -12,7 +12,7 @@ export const PaymentMethodInput = forwardRef<
 >(({ id, icon, label, ...props }, ref) => {
   return (
     <PaymentMethodContainer>
-      <input id={id} type="radio" {...props} name="paymentMethods" ref={ref} />
+      <input id={id} type="radio" {...props} name="paymentMethod" ref={ref} />
       <label htmlFor={id}>
         <ContentContainer>
           {icon}
