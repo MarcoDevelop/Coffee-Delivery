@@ -1,6 +1,7 @@
 import { Input } from '../Input'
 import { AddressFormContainer } from './styles'
 import { useFormContext } from 'react-hook-form'
+import { useEffect } from 'react'
 interface ErrorsType {
   errors: {
     [key: string]: {
@@ -10,6 +11,14 @@ interface ErrorsType {
 }
 
 export function AddressForm() {
+  useEffect(() => {
+    fetch('https://viacep.com.br/ws/06719600/json/').then((response) => {
+      response.json().then((data) => {
+        console.log(data)
+      })
+    })
+  }, [])
+
   const { register, formState } = useFormContext()
 
   const { errors } = formState as unknown as ErrorsType
