@@ -1,7 +1,8 @@
 import { Input } from '../Input'
 import { AddressFormContainer } from './styles'
 import { useFormContext } from 'react-hook-form'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+
 interface ErrorsType {
   errors: {
     [key: string]: {
@@ -10,13 +11,29 @@ interface ErrorsType {
   }
 }
 
+interface Address {
+  cep: number
+  street: string
+  number: string
+  complement: string
+  district: string
+  city: string
+  uf: string
+}
+
 export function AddressForm() {
+  // Buscando informações API
+  const [address, setAddress] = useState<Address[]>([])
+
+  async function loadAddress() {
+    const response = await fetch('https://viacep.com.br/ws/06719600/json/')
+    const data = await response.json()
+
+    setAddress(data)
+  }
+
   useEffect(() => {
-    fetch('https://viacep.com.br/ws/06719600/json/').then((response) => {
-      response.json().then((data) => {
-        console.log(data)
-      })
-    })
+    loadAddress()
   }, [])
 
   const { register, formState } = useFormContext()
@@ -25,6 +42,10 @@ export function AddressForm() {
 
   return (
     <AddressFormContainer>
+      {/* {address.map((address) => {
+        return <input type="text" key={address.street} value={address.cep} />
+      })} */}
+
       <Input
         placeholder="CEP"
         type="number"
