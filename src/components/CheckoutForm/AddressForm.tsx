@@ -3,6 +3,7 @@ import { AddressFormContainer } from './styles'
 import { useFormContext } from 'react-hook-form'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Check } from 'phosphor-react'
 
 interface ErrorsType {
   errors: {
@@ -12,42 +13,7 @@ interface ErrorsType {
   }
 }
 
-interface Address {
-  cep: number
-  street: string
-  number: string
-  complement: string
-  district: string
-  city: string
-  uf: string
-}
-
 export function AddressForm() {
-  // Buscando informações API
-  const [address, setAddress] = useState<Address[]>([])
-  const [zipCode, setZipCode] = useState()
-
-  function loadAddress() {
-    axios.get(`https://viacep.com.br/ws/06719680/json/`).then((response) => {
-      setAddress(response.data)
-    })
-
-    console.log(address)
-  }
-
-  // async function loadAddress() {
-  //   const response = await fetch(`https://viacep.com.br/ws/06719680/json/`)
-  //   const data = await response.json()
-  //   setAddress(data)
-  //   console.log(address)
-  // }
-
-  useEffect(() => {
-    loadAddress()
-  }, [])
-
-  //
-
   const { register, formState } = useFormContext()
 
   const { errors } = formState as unknown as ErrorsType
@@ -61,6 +27,7 @@ export function AddressForm() {
         {...register('cep')}
         error={errors.cep?.message}
       />
+
       <Input
         placeholder="Rua"
         className="street"
