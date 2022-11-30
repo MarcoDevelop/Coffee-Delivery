@@ -20,7 +20,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [TypeScript](https://www.typescriptlang.org)
 - [Vite](https://vitejs.dev/)
 
-- Deploy [Link aqui](https://coffee-delivery-six-sooty.vercel.app/)
+- Projeto rodando [Link aqui](https://coffee-delivery-six-sooty.vercel.app/)
 
 ## 🚀 Como executar
 
