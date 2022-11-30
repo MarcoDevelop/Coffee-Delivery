@@ -9,7 +9,7 @@
 </p>
 <br/><br/>
 
-
+![image](https://user-images.githubusercontent.com/45787976/204828209-207badca-7b1c-4a7a-9a48-d4edb100cac3.png)
 
 <br/><br/>
 
@@ -21,7 +21,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Vite](https://vitejs.dev/)
 
 [VEJA O PROJETO FUNCIONANDO](https://coffee-delivery-six-sooty.vercel.app/)
-
 
 ## 🚀 Como executar
 
@@ -40,12 +39,11 @@ $ npm run dev
 
 ```
 
-A aplicação pode ser acessada em [`localhost:3001`](http://localhost:5173).
+A aplicação pode ser acessada em [`localhost:5173`](http://localhost:5173).
 
 
 ## 💻 Projeto
-Aplicação React com o Vite, nele utilizamos os conceitos mais importantes do React, entre eles estão componentização, propriedades, estados, imutabilidade e hooks, além de aplicar o TypeScript no projeto para adicionar tipagem estática à aplicação. 
-
+Aplicação React com o Vite, nele foi utilizado os conceitos do React, entre eles estão componentização, estados, contextAPI, LocalStorage, Imutabilidade do estado, Listas Propriedades e styled-components, além de aplicar o TypeScript no projeto para adicionar tipagem estática à aplicação. 
 
 ## 🔖 Layout
 
