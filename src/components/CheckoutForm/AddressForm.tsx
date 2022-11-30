@@ -2,6 +2,7 @@ import { Input } from '../Input'
 import { AddressFormContainer } from './styles'
 import { useFormContext } from 'react-hook-form'
 import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 interface ErrorsType {
   errors: {
@@ -24,17 +25,28 @@ interface Address {
 export function AddressForm() {
   // Buscando informações API
   const [address, setAddress] = useState<Address[]>([])
+  const [zipCode, setZipCode] = useState()
 
-  async function loadAddress() {
-    const response = await fetch('https://viacep.com.br/ws/06719600/json/')
-    const data = await response.json()
+  function loadAddress() {
+    axios.get(`https://viacep.com.br/ws/06719680/json/`).then((response) => {
+      setAddress(response.data)
+    })
 
-    setAddress(data)
+    console.log(address)
   }
+
+  // async function loadAddress() {
+  //   const response = await fetch(`https://viacep.com.br/ws/06719680/json/`)
+  //   const data = await response.json()
+  //   setAddress(data)
+  //   console.log(address)
+  // }
 
   useEffect(() => {
     loadAddress()
   }, [])
+
+  //
 
   const { register, formState } = useFormContext()
 
@@ -42,10 +54,6 @@ export function AddressForm() {
 
   return (
     <AddressFormContainer>
-      {/* {address.map((address) => {
-        return <input type="text" key={address.street} value={address.cep} />
-      })} */}
-
       <Input
         placeholder="CEP"
         type="number"
