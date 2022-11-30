@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const HeaderContainer = styled.header`
   height: 6.5rem;
-  background: ${(props) => props.theme['base-card']};
+  background: ${(props) => props.theme['base-white']};
   display: flex;
   align-items: center;
 
